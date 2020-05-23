@@ -37,20 +37,73 @@
     <section>
       <div class="container">
         <div class="card text-center">
-          <div class="card-header">
-            Featured
-          </div>
-          <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p class="card-text">
-              With supporting text below as a natural lead-in to additional
-              content.
-            </p>
-            <a href="#" class="btn btn-primary">Go somewhere</a>
-          </div>
-          <div class="card-footer text-muted">
-            2 days ago
-          </div>
+          <header>
+            <div class="card-header">
+              Journey Fuel Cost Calculator
+            </div>
+          </header>
+
+          <article>
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">
+
+                <form action="#" method="get" class="needs-validation" novalidate>
+                  <div class="form-row">
+                    <div class="col-md-6 mb-3">
+                      <label for="validationCustom01">Origin</label>
+                      <input type="text" class="form-control" id="validationCustom01" value="WD19 5AX" required>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                      <label for="validationCustom02">Destination</label>
+                      <input type="text" class="form-control" id="validationCustom02" value="BA14 7WR" required>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="col-md-4 mb-3">
+                      <label for="validationCustom01">Vehicle MPG</label>
+                      <input type="text" class="form-control" id="validationCustom01" value="WD19 5AX" required>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                      <label for="validationCustom02">Cost of Fuel</label>
+                      <input type="text" class="form-control" id="validationCustom02" value="BA14 7WR" required>
+                      <div class="valid-feedback">
+                        Looks good!
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                  <label for="calcResult" class="col-sm-2 col-form-label">Result</label>
+                    <div class="col-sm-10">
+                      <input type="text" readonly class="form-control-plaintext" id="calcResult" value="£0.00">
+                    </div>
+                  </div>
+                  <button class="btn btn-primary" type="submit">Calculate</button>
+                </form>
+
+                With supporting text below as a natural lead-in to additional
+                content.
+                Need to convert units?  Go to <a href="https://www.unitconverters.net/">Unit Converter</a>.
+              </p>
+              
+            </div>
+          </article>
+
+          <footer>
+            <div class="card-footer text-muted">
+              Journey Fuel Cost Calculator v1.0 released 23 May 2020
+            </div>
+          </footer>
         </div>
       </div>
     </section>
