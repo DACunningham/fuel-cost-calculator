@@ -33,18 +33,20 @@ window.addEventListener(
             if (form.checkValidity() === false) {
                 event.preventDefault();
                 event.stopPropagation();
+            } else if (form.checkValidity() === true) {
+                event.preventDefault();
+                getJourney(
+                    document.getElementById("origin").value,
+                    document.getElementById("destination").value
+                );
             }
             form.classList.add("was-validated");
 
-            getJourney(document.getElementById("origin").value, document.getElementById("destination").value);
+            // form.classList.add("was-validated");
 
-            // let mpg = document.getElementById("vehicleMPG").value;
-            // let fuelCost = document.getElementById("costOfFuel").value;
-            // let distance = ConvertMetresToMiles(journey.distance);
-            // document.getElementById("calcResult").value = calculateFuelCost(
-            //     mpg,
-            //     fuelCost,
-            //     distance
+            // getJourney(
+            //     document.getElementById("origin").value,
+            //     document.getElementById("destination").value
             // );
         });
     },
@@ -70,9 +72,8 @@ function calculateFuelCost(mpg, fuelCost, distance) {
 
 function distanceCallback(response, status) {
     if (status !== "OK") {
-        alert("Error was: " + status);
+        alert("Google API Error: " + status);
     } else {
-        console.log(response.rows[0].elements[0].distance.value);
         journey = new Journey(
             response.originAddresses[0],
             response.destinationAddresses[0],
@@ -102,21 +103,4 @@ function getJourney(origin, destination) {
     );
 }
 
-function initMap() {
-    // // The location of Uluru
-    // var uluru = { lat: -25.344, lng: 131.036 };
-    // // The map, centered at Uluru
-    // map = new google.maps.Map(
-    //     document.getElementById('map'), { zoom: 4, center: uluru });
-
-
-    // const distanceService = new google.maps.DistanceMatrixService();
-    // distanceService.getDistanceMatrix(
-    //     {
-    //         origins: ["watford"],
-    //         destinations: ["london"],
-    //         travelMode: "DRIVING",
-    //         unitSystem: google.maps.UnitSystem.IMPERIAL,
-    //     }
-    // );
-}
+function initMap() { }
