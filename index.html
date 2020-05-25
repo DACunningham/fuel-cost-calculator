@@ -44,7 +44,7 @@
             <form action="#" method="get" class="needs-validation" novalidate>
               <div class="form-row">
                 <div class="col-md-6 mb-3">
-                  <label for="origin">Origin</label>
+                  <label for="origin">Journey Origin</label>
                   <input type="text" class="form-control" id="origin" value="" required
                     aria-describedby="originHelpBlock">
                   <small id="originHelpBlock" class="form-text text-muted">
@@ -55,7 +55,7 @@
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
-                  <label for="destination">Destination</label>
+                  <label for="destination">Journey Destination</label>
                   <input type="text" class="form-control" id="destination" value="" required
                     aria-describedby="destinationHelpBlock">
                   <small id="destinationHelpBlock" class="form-text text-muted">
@@ -70,35 +70,39 @@
               <div class="form-row">
                 <div class="col-md-6 mb-3">
                   <label for="vehicleMPG">Vehicle MPG</label>
-                  <input type="text" class="form-control" id="vehicleMPG" value="" required
+                  <input type="number" class="form-control" id="vehicleMPG" value="" required step="any"
                     aria-describedby="mpgHelpBlock">
                   <small id="mpgHelpBlock" class="form-text text-muted">
-                    The average Miles Per Gallon (MPG) rating for your vehicle
+                    The average Miles Per Gallon (MPG) rating for your vehicle (e.g. 34.4)
                   </small>
                   <div class="invalid-feedback">
-                    This field is required
+                    This field is required & must be a number
                   </div>
                 </div>
                 <div class="col-md-6 mb-3">
                   <label for="costOfFuel">Cost of Fuel (GBP)</label>
-                  <input type="text" class="form-control" id="costOfFuel" value="" required
+                  <input type="number" class="form-control" id="costOfFuel" value="" required step="any"
                     aria-describedby="costHelpBlock">
                   <small id="costHelpBlock" class="form-text text-muted">
                     The cost of fuel in GBP (e.g. £0.99)
                   </small>
                   <div class="invalid-feedback">
-                    This field is required
+                    This field is required & must be a number
                   </div>
                 </div>
               </div>
-              <div class="form-group row">
-                <label for="calcResult" class="col-sm-2 col-form-label">Result</label>
-                <div class="col-sm-10">
-                  <input type="text" readonly class="form-control-plaintext" id="calcResult" value="£0.00">
+
+              <div class="form-row">
+                <div class="col-md-12 mb-4 mt-3">
+                  <label for="calcResult" class="col-sm-2 col-form-label">
+                    <h5>Cost of Journey (£)</h5>
+                  </label>
+                  <input class="form-control form-control-lg" id="calcResult" type="text" placeholder=".form-control-lg"
+                    value="0.00" readonly tabindex="-1">
                 </div>
               </div>
 
-              <div class="form-group row">
+              <div class="form-row mt-4">
                 <div class="col-md-2 col-sm-4">
                   <button class="btn btn-secondary btn-lg btn-block" type="reset" id="resetJourneyCost">Clear</button>
                 </div>
@@ -110,7 +114,6 @@
             <p class="card-text"></p>
             Need to convert units? Go to <a href="https://www.unitconverters.net/">Unit Converter</a>.
             </p>
-
           </div>
         </article>
 
@@ -123,10 +126,11 @@
     </section>
 
     <footer>
-      <div class="col-md-2">
+      <div class="col-md-2 mb-2 mt-2">
         <img id="google" src="./google.png" alt="Powered by Google" decoding="async">
       </div>
     </footer>
+
   </div>
   <!-- CONTENT END -->
 

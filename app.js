@@ -41,19 +41,20 @@ window.addEventListener(
                 );
             }
             form.classList.add("was-validated");
-
-            // form.classList.add("was-validated");
-
-            // getJourney(
-            //     document.getElementById("origin").value,
-            //     document.getElementById("destination").value
-            // );
         });
     },
     false
 );
 
 // Functions
+
+function isNumber(subject) {
+    if (typeof (subject) === "number") {
+        return true;
+    } else {
+        return false;
+    }
+}
 
 function ConvertMetresToMiles(metres) {
     return metres * 0.00062137;
@@ -67,8 +68,6 @@ function calculateFuelCost(mpg, fuelCost, distance) {
     let costOfJourney = litresForJourney * fuelCost;
     return costOfJourney;
 }
-
-// document.getElementById("calcResult").textContent = calculateFuelCost();
 
 function distanceCallback(response, status) {
     if (status !== "OK") {
