@@ -108,9 +108,15 @@ function distanceCallback(response, status) {
     if (status !== "OK") {
         alert("Google API Error: " + status);
     } else if (response.rows[0].elements[0].status === "NOT_FOUND") {
-        alert("Your origin or destination locations are not valid.");
+        $('#errorModal').find('.modal-body').html("Your origin and/or destination locations are not valid." +
+            "<br /> <br />" +
+            "You must enter an address, place, location, post/zip code or valid lat & long that Google maps will accept.");
+        $('#errorModal').modal('show');
     } else if (response.rows[0].elements[0].status === "ZERO_RESULTS") {
-        alert("No route can be found between your origin and destination locations.");
+        $('#errorModal').find('.modal-body').html("No route can be found between your origin and destination locations." +
+            "<br /> <br />" +
+            "Your origin and destination locations are valid; however, Google could not find a route via road between them.");
+        $('#errorModal').modal('show');
     } else {
         journey = new Journey(
             response.originAddresses[0],
