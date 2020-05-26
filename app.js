@@ -26,6 +26,29 @@ var journey;
 window.addEventListener(
     "load",
     function () {
+        // Set Hero Image
+        let randNum = randomNumberBetween(1, 3);
+        switch (randNum) {
+            case 1:
+                document.getElementsByClassName(
+                    "jumbotron"
+                )[0].style.backgroundImage = 'url("./road2.jpg")';
+                break;
+            case 2:
+                document.getElementsByClassName(
+                    "jumbotron"
+                )[0].style.backgroundImage = 'url("./light_road.jpg")';
+                break;
+            case 3:
+                document.getElementsByClassName(
+                    "jumbotron"
+                )[0].style.backgroundImage = 'url("./night_road.jpg")';
+                break;
+            default:
+                break;
+        };
+
+        // Set form code
         let forms = this.document.getElementsByClassName("needs-validation");
         // There's only one form on this page so, get first element in array.
         let form = forms[0];
@@ -69,7 +92,7 @@ function roundToDp(dp = 2, number) {
  * @return  {Number}               Number between min and max (inclusive).
  */
 function randomNumberBetween(min, max) {
-    return Math.floor((Math.random() * max) + min);
+    return Math.floor(Math.random() * max + min);
 }
 
 /**
@@ -108,15 +131,23 @@ function distanceCallback(response, status) {
     if (status !== "OK") {
         alert("Google API Error: " + status);
     } else if (response.rows[0].elements[0].status === "NOT_FOUND") {
-        $('#errorModal').find('.modal-body').html("Your origin and/or destination locations are not valid." +
-            "<br /> <br />" +
-            "You must enter an address, place, location, post/zip code or valid lat & long that Google maps will accept.");
-        $('#errorModal').modal('show');
+        $("#errorModal")
+            .find(".modal-body")
+            .html(
+                "Your origin and/or destination locations are not valid." +
+                "<br /> <br />" +
+                "You must enter an address, place, location, post/zip code or valid lat & long that Google maps will accept."
+            );
+        $("#errorModal").modal("show");
     } else if (response.rows[0].elements[0].status === "ZERO_RESULTS") {
-        $('#errorModal').find('.modal-body').html("No route can be found between your origin and destination locations." +
-            "<br /> <br />" +
-            "Your origin and destination locations are valid; however, Google could not find a route via road between them.");
-        $('#errorModal').modal('show');
+        $("#errorModal")
+            .find(".modal-body")
+            .html(
+                "No route can be found between your origin and destination locations." +
+                "<br /> <br />" +
+                "Your origin and destination locations are valid; however, Google could not find a route via road between them."
+            );
+        $("#errorModal").modal("show");
     } else {
         journey = new Journey(
             response.originAddresses[0],
