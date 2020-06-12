@@ -30,23 +30,22 @@ window.addEventListener(
         let randNum = randomNumberBetween(1, 3);
         switch (randNum) {
             case 1:
-                document.getElementsByClassName(
-                    "jumbotron"
-                )[0].style.backgroundImage = 'url("./road2.jpg")';
+                document.getElementsByClassName("jumbotron")[0].style.backgroundImage =
+                    'url("https://dac-public-hosting.s3-eu-west-1.amazonaws.com/fuel-cost-calculator/road2.jpg")';
                 break;
             case 2:
-                document.getElementsByClassName(
-                    "jumbotron"
-                )[0].style.backgroundImage = 'url("./light_road.jpg")';
+                document.getElementsByClassName("jumbotron")[0].style.backgroundImage =
+                    'url("https://dac-public-hosting.s3-eu-west-1.amazonaws.com/fuel-cost-calculator/light_road.jpg")';
                 break;
             case 3:
-                document.getElementsByClassName(
-                    "jumbotron"
-                )[0].style.backgroundImage = 'url("./night_road.jpg")';
+                document.getElementsByClassName("jumbotron")[0].style.backgroundImage =
+                    'url("https://dac-public-hosting.s3-eu-west-1.amazonaws.com/fuel-cost-calculator/night_road.jpg")';
                 break;
             default:
+                document.getElementsByClassName("jumbotron")[0].style.backgroundImage =
+                    'url("https://dac-public-hosting.s3-eu-west-1.amazonaws.com/fuel-cost-calculator/road2.jpg")';
                 break;
-        };
+        }
 
         // Set form code
         let forms = this.document.getElementsByClassName("needs-validation");
