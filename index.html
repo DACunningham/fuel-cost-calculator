@@ -4,7 +4,7 @@
 <head>
 
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" , shrink-to-fit=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
   <meta name="author" content="Dexter Cunningham" />
   <meta name="description" content="Page to calculate the cost in fuel (petrol) for a given 
       journey between twp post codes (in the UK)" />
@@ -29,101 +29,99 @@
 
 
   <div class="container">
-    <section>
-      <div class="card text-center">
-        <header>
-          <div class="card-header">
-            Journey Fuel Cost Calculator
-          </div>
-        </header>
+    <div class="card text-center">
+      <header>
+        <div class="card-header">
+          Journey Fuel Cost Calculator
+        </div>
+      </header>
 
-        <article>
-          <div class="card-body">
-            <h5 class="card-title">Calculate the cost of your journeys via road</h5>
+      <article>
+        <div class="card-body">
+          <h5 class="card-title">Calculate the cost of your journeys via road</h5>
 
-            <form action="#" method="get" class="needs-validation" novalidate>
-              <div class="form-row">
-                <div class="col-md-6 mb-3">
-                  <label for="origin">Journey Origin</label>
-                  <input type="text" class="form-control" id="origin" value="" required
-                    aria-describedby="originHelpBlock">
-                  <small id="originHelpBlock" class="form-text text-muted">
-                    Origin must be an address, place, location, post/zip code or a valid lat & long
-                  </small>
-                  <div class="invalid-feedback">
-                    This field is required
-                  </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="destination">Journey Destination</label>
-                  <input type="text" class="form-control" id="destination" value="" required
-                    aria-describedby="destinationHelpBlock">
-                  <small id="destinationHelpBlock" class="form-text text-muted">
-                    Destination must be an address, place, location, post/zip code or a valid lat & long
-                  </small>
-                  <div class="invalid-feedback">
-                    This field is required
-                  </div>
+          <form action="#" method="get" class="needs-validation" novalidate>
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="origin">Journey Origin</label>
+                <input type="text" class="form-control" id="origin" value="" required
+                  aria-describedby="originHelpBlock">
+                <small id="originHelpBlock" class="form-text text-muted">
+                  Origin must be an address, place, location, post/zip code or a valid lat & long
+                </small>
+                <div class="invalid-feedback">
+                  This field is required
                 </div>
               </div>
-
-              <div class="form-row">
-                <div class="col-md-6 mb-3">
-                  <label for="vehicleMPG">Vehicle MPG</label>
-                  <input type="number" class="form-control" id="vehicleMPG" value="" required step="any"
-                    aria-describedby="mpgHelpBlock">
-                  <small id="mpgHelpBlock" class="form-text text-muted">
-                    The average Miles Per Gallon (MPG) rating for your vehicle (e.g. 34.4)
-                  </small>
-                  <div class="invalid-feedback">
-                    This field is required & must be a number
-                  </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                  <label for="costOfFuel">Cost of Fuel (GBP)</label>
-                  <input type="number" class="form-control" id="costOfFuel" value="" required step="any"
-                    aria-describedby="costHelpBlock">
-                  <small id="costHelpBlock" class="form-text text-muted">
-                    The cost of fuel in GBP (e.g. £0.99)
-                  </small>
-                  <div class="invalid-feedback">
-                    This field is required & must be a number
-                  </div>
+              <div class="col-md-6 mb-3">
+                <label for="destination">Journey Destination</label>
+                <input type="text" class="form-control" id="destination" value="" required
+                  aria-describedby="destinationHelpBlock">
+                <small id="destinationHelpBlock" class="form-text text-muted">
+                  Destination must be an address, place, location, post/zip code or a valid lat & long
+                </small>
+                <div class="invalid-feedback">
+                  This field is required
                 </div>
               </div>
+            </div>
 
-              <div class="form-row">
-                <div class="col-md-12 mb-4 mt-3">
-                  <label for="calcResult" class="col-sm-12 col-form-label">
-                    <h5>Cost of Journey (£)</h5>
-                  </label>
-                  <input class="form-control form-control-lg" id="calcResult" type="text" placeholder=".form-control-lg"
-                    value="0.00" readonly tabindex="-1">
+            <div class="form-row">
+              <div class="col-md-6 mb-3">
+                <label for="vehicleMPG">Vehicle MPG</label>
+                <input type="number" class="form-control" id="vehicleMPG" value="" required step="any"
+                  aria-describedby="mpgHelpBlock">
+                <small id="mpgHelpBlock" class="form-text text-muted">
+                  The average Miles Per Gallon (MPG) rating for your vehicle (e.g. 34.4)
+                </small>
+                <div class="invalid-feedback">
+                  This field is required & must be a number
                 </div>
               </div>
-
-              <div class="form-row mt-4">
-                <div class="col-md-2 col-sm-4">
-                  <button class="btn btn-secondary btn-lg btn-block" type="reset" id="resetJourneyCost">Clear</button>
-                </div>
-                <div class="col-md-10 col-sm-8">
-                  <button class="btn btn-primary btn-lg btn-block" type="submit" id="calcJourneyCost">Calculate</button>
+              <div class="col-md-6 mb-3">
+                <label for="costOfFuel">Cost of Fuel (GBP)</label>
+                <input type="number" class="form-control" id="costOfFuel" value="" required step="any"
+                  aria-describedby="costHelpBlock">
+                <small id="costHelpBlock" class="form-text text-muted">
+                  The cost of fuel in GBP (e.g. £0.99)
+                </small>
+                <div class="invalid-feedback">
+                  This field is required & must be a number
                 </div>
               </div>
-            </form>
-            <p class="card-text"></p>
+            </div>
+
+            <div class="form-row">
+              <div class="col-md-12 mb-4 mt-3">
+                <label for="calcResult" class="col-sm-12 col-form-label">
+                  Cost of Journey (£)
+                </label>
+                <input class="form-control form-control-lg" id="calcResult" type="text" placeholder=".form-control-lg"
+                  value="0.00" readonly tabindex="-1">
+              </div>
+            </div>
+
+            <div class="form-row mt-4">
+              <div class="col-md-2 col-sm-4">
+                <button class="btn btn-secondary btn-lg btn-block" type="reset" id="resetJourneyCost">Clear</button>
+              </div>
+              <div class="col-md-10 col-sm-8">
+                <button class="btn btn-primary btn-lg btn-block" type="submit" id="calcJourneyCost">Calculate</button>
+              </div>
+            </div>
+          </form>
+          <p class="card-text">
             Need to convert units? Go to <a href="https://www.unitconverters.net/">Unit Converter</a>.
-            </p>
-          </div>
-        </article>
+          </p>
+        </div>
+      </article>
 
-        <footer>
-          <div class="card-footer text-muted">
-            Journey Fuel Cost Calculator v1.0 released 23 May 2020
-          </div>
-        </footer>
-      </div>
-    </section>
+      <footer>
+        <div class="card-footer text-muted">
+          Journey Fuel Cost Calculator v1.0 released 23 May 2020
+        </div>
+      </footer>
+    </div>
 
     <footer>
       <div class="col-md-2 mb-2 mt-2">
